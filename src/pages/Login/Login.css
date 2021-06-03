@@ -1,0 +1,20 @@
+.wrapper-login {
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.wrapper-login .container {
+  width: 90vw;
+  max-width: 600px;
+  text-align: center;
+}
+
+.wrapper-login img {
+  margin-bottom: 2rem;
+}
+
+.wrapper-login h1 {
+  margin-bottom: 1.5rem;
+}
