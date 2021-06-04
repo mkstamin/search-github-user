@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { GitubProvider } from './context/context';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <GitubProvider>
+            <App />
+        </GitubProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );

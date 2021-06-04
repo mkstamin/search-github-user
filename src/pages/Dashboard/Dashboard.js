@@ -1,9 +1,13 @@
 import React from 'react';
+import { Info, Navbar, Repos, Search, User } from '../../components/index';
 
 const Dashboard = () => (
     <main>
-        <h2>Dashboard Page</h2>
-        <h4>search /login</h4>
+        <Navbar />
+        <Search />
+        <Info />
+        <User />
+        <Repos />
     </main>
 );
 
