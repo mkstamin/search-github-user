@@ -1,0 +1,13 @@
+.wrapper-user {
+  padding-top: 2rem;
+  display: -ms-grid;
+  display: grid;
+  gap: 3rem 2rem;
+}
+
+@media (min-width: 992px) {
+  .wrapper-user {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
