@@ -1,0 +1,104 @@
+.wrapper-card {
+  background: var(--clr-white);
+  padding: 1.5rem 2rem;
+  border-top-right-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  position: relative;
+}
+
+.wrapper-card::before {
+  content: "user";
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  background: var(--clr-white);
+  color: var(--clr-grey-5);
+  border-top-right-radius: var(--radius);
+  border-top-left-radius: var(--radius);
+  text-transform: capitalize;
+  padding: 0.5rem 1rem 0 1rem;
+  letter-spacing: var(--spacing);
+  font-size: 1rem;
+}
+
+.wrapper-card header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.wrapper-card header img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.wrapper-card header h4 {
+  margin-bottom: 0.25rem;
+}
+
+.wrapper-card header p {
+  margin-bottom: 0;
+}
+
+.wrapper-card header a {
+  color: var(--clr-primary-5);
+  border: 1px solid var(--clr-primary-5);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.wrapper-card header a:hover {
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+}
+
+.wrapper-card .bio {
+  color: var(--clr-grey-3);
+}
+
+.wrapper-card .links p,
+.wrapper-card .links a {
+  margin-bottom: 0.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper-card .links p svg,
+.wrapper-card .links a svg {
+  margin-right: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.wrapper-card .links a {
+  color: var(--clr-primary-5);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.wrapper-card .links a svg {
+  color: var(--clr-grey-5);
+}
+
+.wrapper-card .links a:hover {
+  color: var(--clr-primary-3);
+}
