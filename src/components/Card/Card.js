@@ -14,7 +14,7 @@ const Card = () => {
                 <img src={avatar_url} alt={name} />
                 <div>
                     <h4>{name}</h4>
-                    <p>{`@${twitter_username} || ${null}`}</p>
+                    <p>{twitter_username ? `@${twitter_username}` : 'has no twitter'}</p>
                 </div>
                 <a href={html_url}>follow</a>
             </header>
@@ -22,15 +22,17 @@ const Card = () => {
             <div className="links">
                 <p>
                     <MdBusiness />
-                    {company}
+                    {company || 'Does not add company'}
                 </p>
                 <p>
+                    {/* {location ? <MdLocationOn /> : null} */}
                     <MdLocationOn />
-                    {location}
+                    {location || 'No location added'}
                 </p>
-                <a href={blog}>
+                <a href={blog || null} target="blank">
                     <MdLink />
-                    {blog}
+                    {/* {blog ? <MdLink /> : null} */}
+                    {blog || 'Has no Blog'}
                 </a>
             </div>
         </div>
