@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
+import Followers from '../Followers/Followers';
 import './User.css';
 
 const User = () => (
@@ -7,7 +8,7 @@ const User = () => (
         <div className="section-center">
             <div className="wrapper-user">
                 <Card />
-                {/* <Followers /> */}
+                <Followers />
             </div>
         </div>
     </section>
