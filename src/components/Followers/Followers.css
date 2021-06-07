@@ -24,7 +24,7 @@
 }
 
 .wrapper-followers .followers {
-  overflow: scroll;
+  overflow: auto;
   height: 260px;
   display: -ms-grid;
   display: grid;

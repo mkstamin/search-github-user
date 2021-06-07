@@ -1,0 +1,33 @@
+.wrapper-repos {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 800px) {
+  .wrapper-repos {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper-repos {
+    -ms-grid-columns: 2fr 3fr;
+        grid-template-columns: 2fr 3fr;
+  }
+}
+
+.wrapper-repos div {
+  width: 100% !important;
+}
+
+.wrapper-repos .fusioncharts-container {
+  width: 100% !important;
+}
+
+.wrapper-repos svg {
+  width: 100% !important;
+  border-radius: var(--radius) !important;
+}

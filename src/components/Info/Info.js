@@ -39,7 +39,6 @@ const Info = () => {
         },
     ];
 
-    console.log(githubUser.public_gists);
     return (
         <section className="section">
             <div className="section-center">
