@@ -3,15 +3,16 @@ import axios from 'axios';
 import React, { useCallback, useEffect, useState } from 'react';
 import datafollowers from './demoData/datafollowers';
 import dataRepos from './demoData/dataRepos';
-import dataUser from './demoData/dataUser';
+// import dataUser from './demoData/dataUser';
 
 const rootUrl = 'https://api.github.com';
+const githubUserUrl = 'https://api.github.com/users/mkstamin';
 
 const GithubContext = React.createContext();
 
 const GitubProvider = ({ children }) => {
     // const { children } = props;
-    const [githubUser, setGithubUser] = useState(dataUser);
+    const [githubUser, setGithubUser] = useState([]);
     const [githubRepos, setGithubRepos] = useState(dataRepos);
     const [githubFollowers, setGithubFollowers] = useState(datafollowers);
     // loading
@@ -20,7 +21,13 @@ const GitubProvider = ({ children }) => {
     // error
     const [error, setError] = useState({ show: false, msg: '' });
 
-    // console.log(githubUser);
+    // const fetchUserData = async () => {
+    //     const data = await fetch(githubUserUrl);
+    //     const gitUser = await data.json();
+    //     setGithubUser(gitUser);
+    // };
+
+    console.log(githubUser);
 
     // error
     const toggleError = (show = false, msg = '') => {
@@ -65,6 +72,13 @@ const GitubProvider = ({ children }) => {
         checkRequest();
         setLoading(false);
     };
+
+    useEffect(() => {
+        axios(githubUserUrl).then((res) => {
+            setGithubUser(res.data);
+        });
+        // fetchUserData();
+    }, []);
 
     useEffect(() => {
         checkRequest();
