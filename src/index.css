@@ -42,6 +42,10 @@ Variables
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
+  
+  --grey: #d9d9d9;
+  --blue: #79bec1;
+  
   --clr-black: #222;
   --ff-primary: 'Roboto', sans-serif;
   --ff-secondary: 'Open Sans', sans-serif;
@@ -68,7 +72,8 @@ Global Styles
 }
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-grey-10);
+  background: linear-gradient(to right, var(--grey) 0%, var(--blue) 100%);
+  font-size: 10px;
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;

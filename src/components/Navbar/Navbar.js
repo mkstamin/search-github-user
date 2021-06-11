@@ -3,7 +3,7 @@ import './Navbar.css';
 
 const Navbar = () => (
     <div className="wrapper-navbar">
-        <h2>Working...............</h2>
+        <h3>Search your github username</h3>
     </div>
 );
 

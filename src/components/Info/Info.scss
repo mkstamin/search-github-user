@@ -7,6 +7,7 @@
   }
   .item {
     border-radius: var(--radius);
+    box-shadow: 0 15px 10px -5px rgba(black, 0.4);
     padding: 1rem 2rem;
     background: var(--clr-white);
     display: grid;

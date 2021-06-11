@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Dashboard, Error, Login } from './pages/index';
+import { Dashboard, Error } from './pages/index';
 
 function App() {
     return (
@@ -8,9 +8,6 @@ function App() {
             <Switch>
                 <Route path="/" exact>
                     <Dashboard />
-                </Route>
-                <Route path="/login" exact>
-                    <Login />
                 </Route>
                 <Route path="*">
                     <Error />
