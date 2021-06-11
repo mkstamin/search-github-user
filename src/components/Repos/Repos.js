@@ -19,10 +19,9 @@ const Repos = () => {
                 stars: totalLangu[language].stars + stargazers_count,
             };
         }
-        // console.log(totalLangu);
+
         return totalLangu;
     }, {});
-    // console.log(languages);
 
     // most used languages
 
@@ -56,8 +55,6 @@ const Repos = () => {
 
     stars = Object.values(stars).slice(-5).reverse();
     forks = Object.values(forks).slice(-5).reverse();
-
-    // console.log(mostPopuler);
 
     return (
         <section className="section">

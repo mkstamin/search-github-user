@@ -6,15 +6,12 @@ import './Search.css';
 const Search = () => {
     const [user, setUser] = useState('');
     const { requests, error, searchGithubUser, loading } = useContext(GithubContext);
-    // console.log(requests);
 
     // get things from global context
     const handleSubmit = (e) => {
         e.preventDefault();
         if (user) {
             searchGithubUser(user);
-            // optional
-            // setUser('');
         }
     };
     return (

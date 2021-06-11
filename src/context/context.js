@@ -1,9 +1,5 @@
-/* eslint-disable no-unused-vars */
 import axios from 'axios';
 import React, { useCallback, useEffect, useState } from 'react';
-import datafollowers from './demoData/datafollowers';
-import dataRepos from './demoData/dataRepos';
-import dataUser from './demoData/dataUser';
 
 const rootUrl = 'https://api.github.com';
 
@@ -11,16 +7,14 @@ const GithubContext = React.createContext();
 
 const GitubProvider = ({ children }) => {
     // const { children } = props;
-    const [githubUser, setGithubUser] = useState(dataUser);
-    const [githubRepos, setGithubRepos] = useState(dataRepos);
-    const [githubFollowers, setGithubFollowers] = useState(datafollowers);
+    const [githubUser, setGithubUser] = useState({});
+    const [githubRepos, setGithubRepos] = useState([]);
+    const [githubFollowers, setGithubFollowers] = useState([]);
     // loading
     const [requests, setRequests] = useState(0);
     const [loading, setLoading] = useState(false);
     // error
     const [error, setError] = useState({ show: false, msg: '' });
-
-    // console.log(githubUser);
 
     // error
     const toggleError = (show = false, msg = '') => {
@@ -65,6 +59,27 @@ const GitubProvider = ({ children }) => {
         checkRequest();
         setLoading(false);
     };
+
+    const defaultGithubUser = async () => {
+        setLoading(true);
+        const response = await axios(`${rootUrl}/users/mkstamin`).catch((err) => console.log(err));
+
+        setGithubUser(response.data);
+        const { login, followers_url } = response.data;
+        // //repos
+        axios(`${rootUrl}/users/${login}/repos?per_page=100`).then((res) => {
+            setGithubRepos(res.data);
+        });
+        // followers
+        axios(`${followers_url}?per_page=100`).then((res) => {
+            setGithubFollowers(res.data);
+        });
+        setLoading(false);
+    };
+
+    useEffect(() => {
+        defaultGithubUser();
+    }, []);
 
     useEffect(() => {
         checkRequest();

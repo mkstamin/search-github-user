@@ -1,4 +1,3 @@
-import { Auth0Provider } from '@auth0/auth0-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -8,15 +7,9 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Auth0Provider
-            domain="dev-lr9u3-f4.jp.auth0.com"
-            clientId="LxlO4Oev5aS5dkaXXzoZCqtNTPInij9T"
-            redirectUri={window.location.origin}
-        >
-            <GitubProvider>
-                <App />
-            </GitubProvider>
-        </Auth0Provider>
+        <GitubProvider>
+            <App />
+        </GitubProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );
