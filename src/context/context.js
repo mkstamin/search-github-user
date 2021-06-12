@@ -102,6 +102,5 @@ const GitubProvider = ({ children }) => {
     );
 };
 
-/* eslint-disable prettier/prettier */
 export { GithubContext, GitubProvider };
 
