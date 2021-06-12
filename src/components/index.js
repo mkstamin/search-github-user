@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import Info from './Info/Info';
 import Navbar from './Navbar/Navbar';
 import Repos from './Repos/Repos';
