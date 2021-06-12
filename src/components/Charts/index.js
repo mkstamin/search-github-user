@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import Bar3D from './Bar3D';
 import Column3D from './Column3D';
 import Doughnut2d from './Doughnut2d';
